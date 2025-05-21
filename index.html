@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jamal Jowdeh | Portfolio</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <header class="text-center mb-5">
+    <h1>Jamal Jowdeh</h1>
+    <p>Computer Science Graduate | Software Developer | Cloud & AI Enthusiast</p>
+    <div class="mt-3 d-flex justify-content-center gap-2 flex-wrap">
+      <a href="https://github.com/yourusername" target="_blank" class="btn btn-dark btn-sm">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn btn-primary btn-sm">LinkedIn</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2 class="mb-3">Projects</h2>
+      <div class="project-card">
+        <h4>Wi-Fi Congestion Analyzer</h4>
+        <p>Conducted network experiments to evaluate WMM prioritization using Wireshark, signal analysis, and traffic shaping.</p>
+        <div id="slideshow" class="mb-3 text-center">
+          <img id="slide-img" src="trial1.csv_scatterplot.png" alt="Wi-Fi Chart" class="img-fluid rounded" style="max-height: 300px;">
+        </div>
+        <a href="https://github.com/yourusername/wifi-congestion" target="_blank" class="btn btn-outline-secondary btn-sm">View on GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <h4>Pokémon Battle Game (Java)</h4>
+        <p>Turn-based Java game inspired by classic Pokémon. Implemented using Swing with animations, sound, and score saving.</p>
+        <a href="https://github.com/yourusername/pokemon-java" target="_blank" class="btn btn-outline-secondary btn-sm">View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="mt-5">
+      <h2 class="mb-3">Skills</h2>
+      <ul>
+        <li>Java, Python, R, JavaScript</li>
+        <li>React, Tailwind, Swing</li>
+        <li>SQL, MongoDB</li>
+        <li>Wireshark, TCP/IP, 802.11</li>
+        <li>AWS, Docker, Git</li>
+        <li>TensorFlow, Keras</li>
+      </ul>
+    </section>
+
+    <section class="mt-5">
+      <h2 class="mb-3">About Me</h2>
+      <p>
+        I'm a solutions-driven Computer Science graduate from Illinois Institute of Technology with a strong focus on AI, networking, and software development. My projects reflect a balance of academic rigor and practical application, from machine learning experiments to full-stack apps.
+      </p>
+    </section>
+  </main>
+
+  <footer class="text-center mt-5">
+    &copy; <span id="year"></span> Jamal Jowdeh. All rights reserved.
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
