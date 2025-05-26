@@ -1,39 +1,25 @@
-@import url('reset.css');
-
-body {
+/* Animated Header */
+header {
+  width: 100%;
   padding: 2rem;
-  background-color: #f9f9f9;
-  line-height: 1.6;
+  text-align: center;
+  background: linear-gradient(270deg, #ff6a00, #ee0979, #00c3ff);
+  background-size: 600% 600%;
+  animation: gradientFlow 10s ease infinite;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.project-card {
-  background: white;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 1.5rem;
+/* Gradient Animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-footer {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  header p {
-    font-size: 1rem;
-  }
-
-  .project-card {
-    padding: 1rem;
-  }
+/* Main Content */
+main {
+  padding: 2rem;
+  text-align: center;
 }
