@@ -1,184 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="css/style.css">    <title>Jamal Jowdeh - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JAMAL_JOWDEH.db</title>
 
+  <!-- one font. I like this old-school look. -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <header>
-        <div id="typedtext"></div>
-        <p>Full-Stack Developer | AI Engineer | Tech Enthusiast</p>
-        <p>Phone: (708) 904-3500 | Email: <a href="mailto:jamalrafejowdeh@gmail.com">jamalrafejowdeh@gmail.com</a></p>
-        <p>
-            <a href="https://linkedin.com/in/jjowdeh/" target="_blank">LinkedIn</a> | 
-            <a href="https://jamalsmallzz.github.io" target="_blank">Website</a> | 
-            <a href="https://github.com/jamalsmallzz" target="_blank">GitHub</a>
-        </p>
+
+  <audio id="ambience" src="audio/backgroundHum.wav" preload="auto" loop></audio>
+  <audio id="boot" src="audio/initial.wav" preload="auto"></audio>
+
+  <div class="crt">
+    <header class="top">
+      <div class="brand">JAMAL_JOWDEH.db</div>
+      
     </header>
 
-    <section>
-        <h2>About Me</h2>
-        <p>I'm a passionate Computer Science graduate from Illinois Institute of Technology with a concentration in Full-Stack Development. I love building innovative solutions that combine AI, web development, and automation to solve real-world problems.</p>
-        <p>With experience ranging from IT support and automation to AI-powered applications and full-stack development, I bring a unique blend of technical expertise and problem-solving skills to every project.</p>
+    <!-- custom nav element so the HTML file stays neat -->
+    <portfolio-nav></portfolio-nav>
+
+    <main id="screen">
+      <!-- ABOUT -->
+      <section id="about" class="pane">
+        <h1><span id="title-about"></span></h1>
+
+        <div class="grid-two">
+          <div>
+            <h2>Hello, I’m Jamal Jowdeh</h2>
+            <p>I’m a passionate Software Engineer who thrives at the intersection of systems, data, and design.
+            My work spans from backend architectures and distributed systems to interactive interfaces and analytics tools. I’ve built Kafka clusters 
+            that handle massive data streams, Wi-Fi analyzers that uncover performance patterns, and JavaFX applications that make information intuitive to explore.
+            I’m fascinated by how structure and clarity can transform complexity into simplicity — that’s what drives my approach to every project.</p> 
+            <p class="dim">Outside of tech, I’m always learning, experimenting, and refining how I build, document, and share what I know.</p>
+          </div>
+        <figure class="portrait">
+          <img src="images/portrait/portrait.JPG" alt="Jamal's portrait">
+        </figure>
+         <ul class="bullets">
+             <li>Email: <a href="mailto:jamalrafejowdeh@gmail.com">jamalrafejowdeh@gmail.com</a></li>
+             <li>LinkedIn: <a href="https://www.linkedin.com/in/jjowdeh/" target="_blank" rel="noopener">linkedin.com/in/jjowdeh</a></li>
+           </ul>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="pane">
+        <h1><span id="title-skills"></span></h1>
+        <div class="grid-three">
+          <div>
+            <h2>Languages</h2>
+            <ul class="bullets">
+              <li>Python, Java, C/C++, JS/TS</li>
+              <li>SQL (MySQL, SQLite), R</li>
+              <li>Bash & PowerShell</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2>Tools</h2>
+            <ul class="bullets">
+              <li>JavaFX, Spring Boot</li>
+              <li>Pandas, Plotly, scikit-learn</li>
+              <li>Git, Docker, AWS/GCP</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2>What I like</h2>
+            <ul class="bullets">
+              <li>Automating boring stuff</li>
+              <li>Visualizing messy data</li>
+              <li>Writing clean repeatable scripts</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    <!-- PROJECTS  -->
+    <section id="projects" class="pane">
+    <h1><span id="title-projects"></span></h1>
+    <div class="cards">
+
+            <!-- ===================== AI & ALGORITHMS ===================== -->
+            <h2>AI & Algorithms</h2>
+
+            <article class="card">
+            <h3>Tic-Tac-Toe AI with MiniMax and Alpha-Beta Pruning</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/tictactoe/board.png" target="_blank" rel="noopener"><img src="images/tictactoe/board.png" alt="Tic-Tac-Toe board UI"></a>
+            </div>
+            -->
+            <p>Built an AI agent that plays perfect Tic-Tac-Toe using MiniMax with Alpha-Beta pruning. Recursive evaluation prunes dominated branches and returns optimal moves with minimal computation, yielding ~10× faster average decisions versus baseline MiniMax.</p>
+            <ul class="bullets">
+                <li>MiniMax + alpha-beta cutoffs with depth control</li>
+                <li>Randomized opponent tests and timing benchmarks</li>
+                <li>Hands-on adversarial search and heuristics</li>
+            </ul>
+            <p class="dim">Skills: Python, AI, Algorithms, Game Theory, Optimization</p>
+            </article>
+
+            <article class="card">
+            <h3>Constraint-Satisfaction Road Trip Planner</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/roadtrip/route.png" target="_blank" rel="noopener"><img src="images/roadtrip/route.png" alt="Planner route visualization"></a>
+            </div>
+            -->
+            <p>CSP solver that plans efficient routes through national parks under realistic constraints (distance, budget, time windows). Uses backtracking with inference and domain ordering to prune inconsistent paths and converge quickly to feasible itineraries.</p>
+            <ul class="bullets">
+                <li>Backtracking + inference + domain ordering</li>
+                <li>CSV ingestion via pandas; distance/cost aggregation</li>
+                <li>Exports routes with cumulative distance and total cost</li>
+            </ul>
+            <p class="dim">Skills: Python, Constraint Satisfaction, Backtracking, Inference</p>
+            </article>
+
+            <article class="card">
+            <h3>Backtracking Search for Zone Optimization</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/zone/zone-graph.png" target="_blank" rel="noopener"><img src="images/zone/zone-graph.png" alt="Zone assignment visualization"></a>
+            </div>
+            -->
+            <p>Recursive solver that assigns routes/zones under adjacency, cost, and capacity limits. Heuristic variable and domain ordering reduce redundant branching; logs visualize search depth and progress across datasets.</p>
+            <ul class="bullets">
+                <li>Consistency checks, inference, and pruning</li>
+                <li>Reduced backtracks via ordering heuristics</li>
+                <li>Deterministic runs with structured logs</li>
+            </ul>
+            <p class="dim">Skills: Python, Backtracking, Constraint Solving, Search Algorithms</p>
+            </article>
+
+            <!-- ================= DATA ANALYTICS & VISUALIZATION ================= -->
+            <h2>Data Analytics & Visualization</h2>
+
+            <article class="card">
+            <h3>Predicting Retail Sales with Data Analytics</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/retail/forecast.png" target="_blank" rel="noopener"><img src="images/retail/forecast.png" alt="Sales forecast visualization"></a>
+                <a href="images/retail/trends.png" target="_blank" rel="noopener"><img src="images/retail/trends.png" alt="Sales trends chart"></a>
+            </div>
+            -->
+            <p>Forecasting pipeline using regression/time-series models to predict weekly sales. Cleaned and merged large transactional datasets, explored seasonality, and presented drivers with interactive visuals; evaluated with MAPE and RMSE.</p>
+            <ul class="bullets">
+                <li>Data cleaning/joins on 20K+ records</li>
+                <li>Regression + ARIMA baselines</li>
+                <li>Plotly dashboards with error metrics</li>
+            </ul>
+            <p class="dim">Skills: Python, Pandas, Regression, Forecasting, Data Visualization</p>
+            </article>
+
+            <article class="card">
+            <h3>Data Clustering and Visualization</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/clustering/dendrogram.png" target="_blank" rel="noopener"><img src="images/clustering/dendrogram.png" alt="Hierarchical dendrogram"></a>
+                <a href="images/clustering/kmeans.png" target="_blank" rel="noopener"><img src="images/clustering/kmeans.png" alt="K-Means cluster plot"></a>
+            </div>
+            -->
+            <p>Compared hierarchical and K-Means clustering on multi-variable data. Used WSS (elbow) and silhouette scores to select K and validated separation with dendrograms; complete linkage delivered the most stable partitions.</p>
+            <ul class="bullets">
+                <li>Complete vs average vs single linkage</li>
+                <li>Silhouette + WSS model selection</li>
+                <li>Clear dendrograms and labeled plots</li>
+            </ul>
+            <p class="dim">Skills: R, Hierarchical Clustering, K-Means, Data Visualization</p>
+            </article>
+
+            <article class="card">
+            <h3>Clustering with DBSCAN and K-Means</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/dbscan-kmeans/dbscan.png" target="_blank" rel="noopener"><img src="images/dbscan-kmeans/dbscan.png" alt="DBSCAN cluster example"></a>
+                <a href="images/dbscan-kmeans/kmeans.png" target="_blank" rel="noopener"><img src="images/dbscan-kmeans/kmeans.png" alt="K-Means cluster example"></a>
+            </div>
+            -->
+            <p>Explored density-based vs centroid-based clustering on synthetic and real datasets. Tuned ε and MinPts for DBSCAN to handle uneven densities and compared results to K-Means using silhouette and distance metrics.</p>
+            <ul class="bullets">
+                <li>Hyperparameter tuning for density sensitivity</li>
+                <li>Noise detection vs compactness trade-offs</li>
+                <li>Readable 2D cluster visualizations</li>
+            </ul>
+            <p class="dim">Skills: R, Clustering, DBSCAN, K-Means, Unsupervised Learning</p>
+            </article>
+
+            <article class="card">
+            <h3>Car Dataset Analysis and Visualization</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/cars/speed-distance.png" target="_blank" rel="noopener"><img src="images/cars/speed-distance.png" alt="Speed vs distance scatter plot"></a>
+            </div>
+            -->
+            <p>Analyzed speed vs stopping distance with descriptive stats and linear trendlines. Produced clean scatter/line plots and confidence intervals demonstrating how speed impacts braking distance.</p>
+            <ul class="bullets">
+                <li>Summary stats (mean/median/std) and correlations</li>
+                <li>Trendline interpretation with CI</li>
+                <li>PNG charts for reporting</li>
+            </ul>
+            <p class="dim">Skills: R, Data Visualization, Statistical Analysis</p>
+            </article>
+
+            <!-- ================== NETWORKING & WIRELESS ================== -->
+            <h2>Networking & Wireless</h2>
+
+            <article class="card">
+            <h3>Wi-Fi Performance Experiment</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/wifi-perf/rssi-hist.png" target="_blank" rel="noopener"><img src="images/wifi-perf/rssi-hist.png" alt="RSSI histogram"></a>
+                <a href="images/wifi-perf/datarate-hist.png" target="_blank" rel="noopener"><img src="images/wifi-perf/datarate-hist.png" alt="Data-rate histogram"></a>
+            </div>
+            -->
+            <p>Designed controlled tests to measure how congestion affects Wi-Fi quality. Captured live 802.11 traffic, computed RSSI and rate distributions, and showed how contention degrades QoS as client counts rise.</p>
+            <ul class="bullets">
+                <li>Environment comparisons (residential vs shared)</li>
+                <li>Frame-level parsing and metric filtering</li>
+                <li>Clear charts linking contention to QoS loss</li>
+            </ul>
+            <p class="dim">Skills: Wireshark, 802.11, QoS, Networking, Data Analytics</p>
+            </article>
+
+            <article class="card">
+            <h3>Wi-Fi Multimedia Prioritization Analyzer</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/wmm/throughput.png" target="_blank" rel="noopener"><img src="images/wmm/throughput.png" alt="Throughput by WMM class"></a>
+            </div>
+            -->
+            <p>Python analyzer that classifies real-time Wi-Fi traffic by WMM priority tags to compare latency-sensitive streams (voice/video) vs background. Live parsing with PyShark/Scapy and post-capture visuals reveal scheduling preference under load.</p>
+            <ul class="bullets">
+                <li>QoS tag filtering and per-class metrics</li>
+                <li>Latency/throughput comparison by access category</li>
+                <li>Visual reports for quick diagnosis</li>
+            </ul>
+            <p class="dim">Skills: Python, Wireshark, QoS, Networking, Real-Time Processing</p>
+            </article>
+
+            <article class="card">
+            <h3>Wi-Fi Signal Strength and Data Rate Visualization</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/wifi-visuals/rssi.png" target="_blank" rel="noopener"><img src="images/wifi-visuals/rssi.png" alt="RSSI histogram"></a>
+                <a href="images/wifi-visuals/datarate.png" target="_blank" rel="noopener"><img src="images/wifi-visuals/datarate.png" alt="Data rate distribution"></a>
+            </div>
+            -->
+            <p>Parsed and visualized Wi-Fi traces to show how signal and throughput vary by environment. Histograms and scatter plots highlight performance degradation with distance, interference, and load.</p>
+            <ul class="bullets">
+                <li>802.11 field extraction and rate analysis</li>
+                <li>Pandas/Matplotlib data processing</li>
+                <li>Evidence of congestion-driven instability</li>
+            </ul>
+            <p class="dim">Skills: Python, Wireshark, Networking, Data Visualization</p>
+            </article>
+
+            <!-- ============= SYSTEMS, DISTRIBUTED & APPS/TOOLS ============= -->
+            <h2>Systems, Distributed & Apps</h2>
+
+            <article class="card">
+            <h3>Kafka Distributed Cluster</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/kafka/cluster-topology.png" target="_blank" rel="noopener"><img src="images/kafka/cluster-topology.png" alt="Kafka cluster topology"></a>
+                <a href="images/kafka/producer-throughput.png" target="_blank" rel="noopener"><img src="images/kafka/producer-throughput.png" alt="Producer throughput chart"></a>
+            </div>
+            -->
+            <p>Secure four-node Kafka deployment with replication/partitioning, SSL, and ACLs. Python producers/consumers streamed 1M+ JSON messages across multiple topics to validate reliability and throughput under simulated node failures.</p>
+            <ul class="bullets">
+                <li>Replication factor tuning and retention policies</li>
+                <li>Confluent Kafka Python clients for load tests</li>
+                <li>Durability and throughput improvements after tuning</li>
+            </ul>
+            <p class="dim">Skills: Kafka, Python, Distributed Systems, Cloud Infrastructure, Security</p>
+            </article>
+
+            <article class="card">
+            <h3>Parallel Computing with MPICH Cluster</h3>
+            <!-- optional screenshots -->
+            <!--
+            <div class="shots">
+                <a href="images/mpich/cluster-nodes.png" target="_blank" rel="noopener"><img src="images/mpich/cluster-nodes.png" alt="MPICH nodes"></a>
+                <a href="images/mpich/runtime-scaling.png" target="_blank" rel="noopener"><img src="images/mpich/runtime-scaling.png" alt="Runtime scaling"></a>
+            </div>
+            -->
+            <p>Three-node compute cluster with shared storage to execute MPI workloads concurrently. Implemented parallel reductions and dynamic load distribution; achieved up to 60% wall-clock improvement before network bottlenecks.</p>
+            <ul class="bullets">
+                <li>SSH, NFS, and firewall config for seamless messaging</li>
+                <li>Array ops, reductions, and timing harness</li>
+                <li>Observed scaling limits and contention points</li>
+            </ul>
+            <p class="dim">Skills: MPI, Linux Clusters, Parallel Processing, HPC</p>
+            </article>
+
+            <article class="card">
+            <h3>PriceDivergenceMonitor</h3>
+            <div class="shots">
+                <a href="images/pdm/PriceDivergenceMonitor.png" target="_blank" rel="noopener"><img src="images/pdm/PriceDivergenceMonitor.png" alt="Price Divergence Monitor screenshot"></a>
+            </div>
+            <p>Lightweight C++/Java utility that computes pair spreads on streaming price feeds and emits JSON-line alerts when divergence exceeds thresholds. Separate adapters, compute core, and notifiers keep latency low and code maintainable.</p>
+            <ul class="bullets">
+                <li>Rolling window stats and simple anomaly triggers</li>
+                <li>File/STDIN readers with structured logs</li>
+                <li>Fast, dependency-light runtime</li>
+            </ul>
+            <p class="dim">Skills: C++/Java, STL, file I/O</p>
+            </article>
+
+            <article class="card">
+            <h3>Super Pokédex (JavaFX & Gradle)</h3>
+            <div class="shots">
+                <a href="images/pokedex/PokedexForm.png" target="_blank" rel="noopener"><img src="images/pokedex/PokedexForm.png" alt="Pokédex main form"></a>
+                <a href="images/pokedex/PokedexSearch.png" target="_blank" rel="noopener"><img src="images/pokedex/PokedexSearch.png" alt="Pokédex search view"></a>
+                <a href="images/pokedex/PokedexSorts.png" target="_blank" rel="noopener"><img src="images/pokedex/PokedexSorts.png" alt="Pokédex sorting options"></a>
+                <a href="images/pokedex/PokedexFlavorText.png" target="_blank" rel="noopener"><img src="images/pokedex/PokedexFlavorText.png" alt="Pokédex flavor text view"></a>
+            </div>
+            <p>Desktop app for exploring Pokémon stats with live PokéAPI data. Type-based filtering, stat charts, and cached offline data for fast search; MVC structure with Gradle automation and Jackson JSON parsing.</p>
+            <ul class="bullets">
+                <li>Local caching, dynamic sorting, multi-criteria search</li>
+                <li>JavaFX UI, Gradle builds, modular data layer</li>
+                <li>Responsive charts with minimal load time</li>
+            </ul>
+            <p class="dim">Skills: Java, JavaFX, JSON, Gradle, Data Visualization</p>
+            </article>
+
+            <!-- ===================== Wi-Fi WMM Analyzer (images restored) ===================== -->
+            <article class="card">
+            <h3>Wi-Fi WMM Analyzer</h3>
+            <div class="shots">
+                <a href="images/wireless/trial1.csv_barplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial1.csv_barplot.png" alt="trial1 barplot"></a>
+                <a href="images/wireless/trial1.csv_scatterplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial1.csv_scatterplot.png" alt="trial1 scatterplot"></a>
+                <a href="images/wireless/trial2.csv_barplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial2.csv_barplot.png" alt="trial2 barplot"></a>
+                <a href="images/wireless/trial2.csv_scatterplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial2.csv_scatterplot.png" alt="trial2 scatterplot"></a>
+                <a href="images/wireless/trial3.csv_barplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial3.csv_barplot.png" alt="trial3 barplot"></a>
+                <a href="images/wireless/trial3.csv_scatterplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial3.csv_scatterplot.png" alt="trial3 scatterplot"></a>
+                <a href="images/wireless/trial4.csv_barplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial4.csv_barplot.png" alt="trial4 barplot"></a>
+                <a href="images/wireless/trial4.csv_scatterplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial4.csv_scatterplot.png" alt="trial4 scatterplot"></a>
+                <a href="images/wireless/trial5.csv_barplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial5.csv_barplot.png" alt="trial5 barplot"></a>
+                <a href="images/wireless/trial5.csv_scatterplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial5.csv_scatterplot.png" alt="trial5 scatterplot"></a>
+                <a href="images/wireless/trial6.csv_barplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial6.csv_barplot.png" alt="trial6 barplot"></a>
+                <a href="images/wireless/trial6.csv_scatterplot.png" target="_blank" rel="noopener"><img src="images/wireless/trial6.csv_scatterplot.png" alt="trial6 scatterplot"></a>
+            </div>
+            <p>Parser + visualization pipeline that groups packets by WMM service classes (voice/video/best-effort/background) to show how access categories affect throughput and latency as networks crowd.</p>
+            <ul class="bullets">
+                <li>Wireshark + PyShark/Scapy to extract QoS/rates</li>
+                <li>Pandas transforms and reproducible charts</li>
+                <li>Clear evidence of contention and priority effects</li>
+            </ul>
+            <p class="dim">Skills: Python, PyShark, Scapy, Matplotlib</p>
+            </article>
+
+        </div>
     </section>
 
-    <section>
-        <h2>Professional Experience</h2>
 
-        <div class="job-header">
-            <h3>Advanced Repair Agent - Best Buy Inc.</h3>
-            <span class="date">Aug 2024 - Present</span>
+
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="pane">
+        <h1><span id="title-experience"></span></h1>
+        <div class="timeline">
+          <div class="job">
+            <h3>Advanced Repair Agent — Best Buy (Aug 2024–Present)</h3>
+            <ul class="bullets">
+              <li>Built scripts to automate diagnostics and OS installs</li>
+              <li>Reduced repeat repairs by tracking patterns</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>IT Support, Alshaheen Perfume (May–Aug 2023)</h3>
+            <ul class="bullets">
+              <li>Python & PowerShell scripts to speed ticket work</li>
+              <li>MySQL routines to keep inventory synced</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>IT Support & Web Dev — AAA Insurance (Aug 2021–Dec 2022)</h3>
+            <ul class="bullets">
+              <li>Day-to-day support, quick site fixes, data updates</li>
+            </ul>
+          </div>
         </div>
-        <p><em>Chicago, IL</em></p>
-        <ul>
-            <li>Automated system diagnostics and OS deployments with scripting, reducing setup time</li>
-            <li>Collaborated with teammates to resolve escalated repair cases, ensuring customer satisfaction</li>
-            <li>Communicated complex technical solutions in clear, user-friendly terms to clients</li>
-        </ul>
+      </section>
 
-        <div class="job-header">
-            <h3>Information Technology Support Specialist - Alshaheen Perfume</h3>
-            <span class="date">May 2023 - Aug 2023</span>
-        </div>
-        <p><em>Plainfield, IL</em></p>
-        <ul>
-            <li>Built automation scripts in Python and PowerShell to speed up ticket resolution</li>
-            <li>Monitored and supported backend processes for e-commerce operations</li>
-            <li>Developed MySQL routines to keep inventory records synchronized with online sales</li>
-        </ul>
+    </main>
 
-        <div class="job-header">
-            <h3>IT Support and Web Developer - Saleem A Elmosa Insurance Agency</h3>
-            <span class="date">Aug 2021 - Dec 2022</span>
-        </div>
-        <p><em>Downers Grove, IL</em></p>
-        <ul>
-            <li>Provided day-to-day IT support for staff, ensuring software and network uptime</li>
-            <li>Updated and maintained client-facing web tools using HTML, CSS, and JavaScript</li>
-            <li>Automated policy tracking and invoice generation using Python scripts</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Featured Projects</h2>
-
-        <div class="project-header">
-            <h3>Jamal's Pokedex</h3>
-        </div>
-        <p><em>Technologies: Python, PokeAPI, Data Visualization</em></p>
-        <p>Developed an application that provides easily accessible and detailed data of all Pokemon with helpful data visualizations. Built for competitive Pokemon gaming including IV training, EV training, and team building. Features self-updating data through PokeAPI integration.</p>
-
-        <div class="project-header">
-            <h3>Real Estate Marketplace Platform</h3>
-            <span class="date">Aug 2024 - Dec 2024</span>
-        </div>
-        <p><em>Technologies: Java, SQL, JavaScript</em></p>
-        <ul>
-            <li>Led backend development for a multi-role property listing system</li>
-            <li>Designed buyer, seller, and admin workflows with database-driven features</li>
-        </ul>
-
-        <div class="project-header">
-            <h3>AI U.S. RoadTrip Planner</h3>
-            <span class="date">Jan 2023 - May 2023</span>
-        </div>
-        <p><em>Technologies: Python, Constraint Satisfaction, AI Algorithms</em></p>
-        <ul>
-            <li>Built a Python tool using constraint satisfaction to optimize multi-state road trips</li>
-            <li>Implemented backtracking search to handle travel and park requirements</li>
-        </ul>
-
-        <div class="project-header">
-            <h3>AI Powered Tic Tac Toe</h3>
-            <span class="date">Aug 2021 - Dec 2021</span>
-        </div>
-        <p><em>Technologies: Python, Minimax Algorithm</em></p>
-        <ul>
-            <li>Created a Python game engine with a Minimax-based AI opponent</li>
-            <li>Modularized code for turn handling, evaluation, and replay</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <div class="job-header">
-            <h3>Bachelor's of Science in Computer Science</h3>
-            <span class="date">Aug 2021 - May 2025</span>
-        </div>
-        <p><em>Illinois Institute of Technology, Chicago, IL</em></p>
-        <p>Concentration: Full-Stack Development</p>
-        <p>Honors: Dean's List, Heald Scholar, STEM+ Scholar</p>
-    </section>
-
-    <section>
-        <h2>Skills & Expertise</h2>
-        
-        <h3>Programming Languages</h3>
-        <p>Python, Java, C, C++, SQL, JavaScript, HTML, CSS, Racket, Assembly x86</p>
-
-        <h3>Frameworks & Libraries</h3>
-        <p>React.js, Node.js, Chart.js, MySQL, MongoDB, PostgreSQL, Firebase</p>
-
-        <h3>Cloud & DevOps</h3>
-        <p>Git, Docker, AWS (EC2, S3), Google Cloud, Chameleon Cloud, VS Code, Vim, GDB</p>
-
-        <h3>Data & AI Technologies</h3>
-        <p>Pandas, NumPy, Scapy, PyShark, matplotlib, Seaborn, R (stats, dplyr, stringr)</p>
-
-        <h3>Professional Skills</h3>
-        <p>Communication & Collaboration, Leadership, Problem Solving, Adaptability, Time Management, Agile Development, UI/UX Design</p>
-
-        <h3>Languages</h3>
-        <p>English (fluent), Arabic (fluent), Spanish (conversational)</p>
-    </section>
-
-    <footer>
-        <p>© 2025 Jamal Jowdeh. All rights reserved.</p>
+    <footer class="bottom">
+      <span>CH-88</span>
+      <span class="dots">•••</span>
+      <span>RAD SAFE</span>
     </footer>
+  </div>
 
-    <script>
-        // set up text to print, each item in array is new line
-        var aText = new Array(
-            "Hi, I'm Jamal Jowdeh.", 
-            "I am a Full-Stack Developer.",
-            "I Love AI & Machine Learning.",
-            "I Love to Build Innovative Solutions."
-        );
-        var iSpeed = 100; // time delay of print out
-        var iIndex = 0; // start printing array at this posision
-        var iArrLength = aText[0].length; // the length of the text array
-        var iScrollAt = 20; // start scrolling up at this many lines
-        
-        var iTextPos = 0; // initialise text position
-        var sContents = ''; // initialise contents variable
-        var iRow; // initialise current row
-        
-        function typewriter()
-        {
-            sContents = ' ';
-            iRow = Math.max(0, iIndex-iScrollAt);
-            var destination = document.getElementById("typedtext");
-            
-            while ( iRow < iIndex ) {
-                sContents += aText[iRow++] + '<br />';
-            }
-            destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
-            if ( iTextPos++ == iArrLength ) {
-                iTextPos = 0;
-                iIndex++;
-                if ( iIndex != aText.length ) {
-                    iArrLength = aText[iIndex].length;
-                    setTimeout("typewriter()", 500);
-                }
-            } else {
-                setTimeout("typewriter()", iSpeed);
-            }
-        }
-        
-        typewriter();
-    </script>
+  <!-- main script. if you change names here remember to also edit the JS file -->
+  <script src="js/main.js"></script>
 </body>
 </html>
