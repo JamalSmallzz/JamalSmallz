@@ -1,12 +1,39 @@
-const images = [
-  'images/wireless/trial1.csv_barplot.png',
-  'images/wireless/trial1.csv_scatterplot.png'
-];
-let current = 0;
-const slideImg = document.getElementById('slide-img');
-const yearSpan = document.getElementById('year');
-setInterval(() => {
-  current = (current + 1) % images.length;
-  slideImg.src = images[current];
-}, 3000);
-yearSpan.textContent = new Date().getFullYear();
+const typedText = document.querySelector(".typed-text");
+const cursor = document.querySelector(".cursor");
+
+const textArray = ["Web Developer", "Web Designer", "Tutor", "Learner..."];
+
+let textArrayIndex = 0;
+let charIndex = 0;
+
+const erase = () => {
+  if (charIndex > 0) {
+    cursor.classList.remove('blink');
+    typedText.textContent = textArray[textArrayIndex].slice(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 80);
+  } else {
+    cursor.classList.add('blink');
+    textArrayIndex++;
+    if (textArrayIndex > textArray.length - 1) {
+      textArrayIndex = 0;
+    }
+    setTimeout(type, 1000);
+  }
+}
+
+const type = () => {
+  if (charIndex <= textArray[textArrayIndex].length - 1) {
+    cursor.classList.remove('blink');
+    typedText.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 120);
+  } else {
+    cursor.classList.add('blink');
+    setTimeout(erase, 1000);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  type();
+})

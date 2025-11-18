@@ -1,25 +1,82 @@
-/* Animated Header */
-header {
-  width: 100%;
-  padding: 2rem;
-  text-align: center;
-  background: linear-gradient(270deg, #ff6a00, #ee0979, #00c3ff);
-  background-size: 600% 600%;
-  animation: gradientFlow 10s ease infinite;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-}
+   body {
+            background-color: #000000;
+            text-align: center;
+            color: #00ff00;
+            padding-top: 5em;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8em;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
 
-/* Gradient Animation */
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+        * { 
+            color: #00ff00; 
+            text-decoration: none;
+            image-rendering: pixelated;
+        }
 
-/* Main Content */
-main {
-  padding: 2rem;
-  text-align: center;
-}
+        a:hover {
+            text-decoration: underline;
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        
+        h1, h2, h3 {
+            line-height: 1.8;
+        }
+        
+        p, li {
+            line-height: 1.6;
+        }
+
+        #typedtext {
+            font-size: 2em;
+            margin-bottom: 2em;
+            min-height: 100px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        h2 {
+            margin-top: 2em;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .job-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 1.5em;
+        }
+
+        .date {
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        footer {
+            margin-top: 4em;
+            padding: 2em 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li:before {
+            content: "● ";
+            margin-right: 0.5em;
+        }
